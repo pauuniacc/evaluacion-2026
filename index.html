@@ -190,9 +190,38 @@
             .flow-container { flex-direction: column; }
             .arrow-separator { transform: rotate(90deg); margin: 0.5rem 0; }
         }
+/* Indicador visual de navegación (Bordes naranjas) */
+:focus {
+    outline: 3px solid #ffa500 !important;
+    outline-offset: 2px;
+}
+
+/* Modo Alto Contraste */
+body.high-contrast {
+    background-color: #0c0b0b !important;
+    color: #ffffff !important;
+}
+body.high-contrast .bg-white, 
+body.high-contrast section,
+body.high-contrast .bg-uniacc-blue-100 {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
+    color: #00ff00 !important; /* Verde neón para resaltar enlaces/títulos */
+}
     </style>
 </head>
 <body class="bg-uniacc-blue-300">
+
+<div id="accessibility-panel" class="fixed top-24 right-4 z-[60] bg-white p-4 rounded-2xl shadow-2xl border border-uniacc-blue-100 flex flex-col gap-2">
+    <h4 class="text-xs font-bold text-uniacc-blue-900 mb-1">Accesibilidad AA</h4>
+    <button onclick="toggleContrast()" class="text-xs bg-uniacc-blue-900 text-white px-3 py-2 rounded-lg font-semibold">Alto Contraste</button>
+    <button onclick="changeFontSize(2)" class="text-xs bg-uniacc-blue-500 text-white px-3 py-2 rounded-lg font-semibold">Agrandar Letra</button>
+    <button onclick="changeFontSize(-2)" class="text-xs bg-uniacc-blue-500 text-white px-3 py-2 rounded-lg font-semibold">Reducir Letra</button>
+    <button id="read-btn" onclick="toggleSpeech()" class="text-xs bg-uniacc-magenta-500 text-white px-3 py-2 rounded-lg font-semibold">Lectura Asistida</button>
+</div>
 
 <nav class="fixed top-0 w-full bg-uniacc-blue-900/95 shadow-xl z-50 border-b border-white/10 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1470,7 +1499,49 @@ function toggleGlosario(id) {
 }
 
         }
-    </script>
+ let isReading = false;
+let synth = window.speechSynthesis;
+let currentFontSize = 16;
+
+// Adaptabilidad Visual: Contraste y Tamaño de Letra
+function toggleContrast() {
+    document.body.classList.toggle('high-contrast');
+}
+
+function changeFontSize(delta) {
+    currentFontSize += delta;
+    document.body.style.fontSize = currentFontSize + 'px';
+}
+
+// Lectura Asistida
+function toggleSpeech() {
+    const btn = document.getElementById('read-btn');
+    if (!isReading) {
+        const textToRead = document.querySelector('main') ? document.querySelector('main').innerText : document.body.innerText;
+        const utterance = new SpeechSynthesisUtterance(textToRead);
+        utterance.lang = 'es-ES';
+        utterance.rate = 1.0; // Velocidad controlable
+        
+        utterance.onend = () => { isReading = false; btn.innerText = "Lectura Asistida"; };
+        synth.speak(utterance);
+        isReading = true;
+        btn.innerText = "Pausar Lectura";
+    } else {
+        synth.cancel();
+        isReading = false;
+        btn.innerText = "Lectura Asistida";
+    }
+}
+
+// Navegación Universal: Modo "Leer al apuntar" (Opcional)
+document.addEventListener('mouseover', (e) => {
+    if (isReading && (e.target.tagName === 'P' || e.target.tagName === 'H2')) {
+        synth.cancel();
+        const utter = new SpeechSynthesisUtterance(e.target.innerText);
+        utter.lang = 'es-ES';
+        synth.speak(utter);
+    }
+});
     </script>
 </body>
 </html>
