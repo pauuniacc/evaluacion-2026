@@ -190,9 +190,9 @@
             .flow-container { flex-direction: column; }
             .arrow-separator { transform: rotate(90deg); margin: 0.5rem 0; }
         }
-/* Indicador visual de navegación (Bordes naranjas) */
+/* Indicador visual de navegación */
 :focus {
-    outline: 3px solid #ffa500 !important;
+    outline: 3px solid ff01ff !important;
     outline-offset: 2px;
 }
 
@@ -212,7 +212,32 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
     color: #00ff00 !important; /* Verde neón para resaltar enlaces/títulos */
 }
     </style>
+<style>
+    /* Estilo para la barra de desplazamiento */
+    #contenedor-competencias::-webkit-scrollbar {
+        width: 10px !important;
+        display: block !important;
+    }
+    #contenedor-competencias::-webkit-scrollbar-track {
+        background: #f1f1f1 !important; /* Gris claro para que se vea el fondo */
+        border-radius: 10px;
+    }
+    #contenedor-competencias::-webkit-scrollbar-thumb {
+        background: #0030b3 !important; /* Tu azul específico */
+        border-radius: 10px;
+        border: 2px solid #f1f1f1; /* Crea un efecto de separación */
+    }
+    #contenedor-competencias::-webkit-scrollbar-thumb:hover {
+        background: #002080 !important;
+    }
+    /* Para Firefox */
+    #contenedor-competencias {
+        scrollbar-width: thin;
+        scrollbar-color: #0030b3 #f1f1f1;
+    }
+</style>
 </head>
+
 <body class="bg-uniacc-blue-300">
 
 <div id="accessibility-panel" class="fixed top-24 right-4 z-[60] bg-white p-4 rounded-2xl shadow-2xl border border-uniacc-blue-100 flex flex-col gap-2">
@@ -993,14 +1018,16 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
         </div>
 
         <div>
-    <div class="mt-8">
-    <h3 class="text-xl font-bold mb-6 text-uniacc-blue-700 border-b border-uniacc-orange-500/30 pb-2 flex items-center">
+    
+<div class="mt-8">
+    <h3 class="text-xl font-bold mb-6 text-uniacc-blue-700 border-b border-uniacc-blue-700/30 pb-2 flex items-center">
         Competencias específicas
     </h3>
-    </h3>
-    
     <div class="space-y-3 max-h-[700px] overflow-y-auto pr-4 custom-scrollbar">
-        
+   
+    <div id="contenedor-competencias" class="h-[500px] overflow-y-scroll pr-4">
+        <div class="space-y-8">
+         
           <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
             <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all" onclick="toggleGlosario('spec-1')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Adaptabilidad al cambio</span>
@@ -1010,10 +1037,10 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Es la capacidad para adaptarse y avenirse a los cambios, modificando si fuese necesario su propia conducta para alcanzar determinados objetivos cuando surgen dificultades, nueva información, o cambios del medio, ya sean del entorno exterior, de la propia institución, del usuario o de los requerimientos del trabajo en sí.</p>
                 <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Realiza adaptaciones organizacionales y estratégicas a corto, mediano y largo plazo en respuesta a los cambios del entorno o las necesidades de la situación. Evalúa sistemáticamente su entorno atento a cambios que pudieran producirse.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Adapta tácticas y objetivos para afrontar una situación o solucionar problemas. Sistemáticamente revisa y evalúa las consecuencias positivas y/o negativas de las acciones pasadas para agregar valor.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Evalúa y observa la situación objetivamente y puede reconocer la validez del punto de vista de otros, utilizando dicha información de manera selectiva para modificar su accionar. Revisa situaciones pasadas para modificar su accionar ante situaciones nuevas.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Sigue siempre los procedimientos. En ocasiones puede reconocer la validez de otros puntos de vista y modificar su accionar.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Realiza adaptaciones organizacionales y estratégicas a corto, mediano y largo plazo en respuesta a los cambios del entorno o las necesidades de la situación. Evalúa sistemáticamente su entorno atento a cambios que pudieran producirse.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Adapta tácticas y objetivos para afrontar una situación o solucionar problemas. Sistemáticamente revisa y evalúa las consecuencias positivas y/o negativas de las acciones pasadas para agregar valor.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Evalúa y observa la situación objetivamente y puede reconocer la validez del punto de vista de otros, utilizando dicha información de manera selectiva para modificar su accionar. Revisa situaciones pasadas para modificar su accionar ante situaciones nuevas.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Sigue siempre los procedimientos. En ocasiones puede reconocer la validez de otros puntos de vista y modificar su accionar.</li>
                 </ul>
             </div>
         </div>
@@ -1021,16 +1048,16 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
          <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
             <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all" onclick="toggleGlosario('spec-2')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Aprendizaje Continuo</span>
-                <svg id="icon-spec-2" class="w-5 h-5 text-uniacc-orange-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg id="icon-spec-2" class="w-5 h-5 text-uniacc-blue-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div id="content-spec-2" class="hidden px-6 pb-6 text-sm border-t border-gray-100 pt-4">
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Es la habilidad para buscar y compartir información útil para la resolución de situaciones de trabajo utilizando todo el potencial de la institución. Incluye la capacidad de utilizar la experiencia de otros y la propia propagando el conocimiento adquirido.</p>
                 <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Es reconocido como un experto en su especialidad en el medio donde actúa. Comparte sus conocimientos y experiencia actuando como agente de cambio y propagador de nuevas ideas y tecnologías.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Participa en la comunidad actuando como referente. Ofrece su experiencia y conocimientos para resolver problemas de otras áreas.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Realiza un gran esfuerzo por adquirir nuevas habilidades y conocimientos. Busca y analiza proactivamente información pertinente para planificar un curso de acción.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Mantiene su formación técnica aunque tiene una actitud reactiva: busca información cuando la necesita, lee manuales/libros para aumentar sus conocimientos básicos.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Es reconocido como un experto en su especialidad en el medio donde actúa. Comparte sus conocimientos y experiencia actuando como agente de cambio y propagador de nuevas ideas y tecnologías.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Participa en la comunidad actuando como referente. Ofrece su experiencia y conocimientos para resolver problemas de otras áreas.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Realiza un gran esfuerzo por adquirir nuevas habilidades y conocimientos. Busca y analiza proactivamente información pertinente para planificar un curso de acción.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Mantiene su formación técnica aunque tiene una actitud reactiva: busca información cuando la necesita, lee manuales/libros para aumentar sus conocimientos básicos.</li>
                 </ul>
             </div>
         </div>
@@ -1038,16 +1065,16 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
  <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
             <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all" onclick="toggleGlosario('spec-3')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Autocontrol</span>
-                <svg id="icon-spec-3" class="w-5 h-5 text-uniacc-orange-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg id="icon-spec-3" class="w-5 h-5 text-uniacc-blue-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div id="content-spec-3" class="hidden px-6 pb-6 text-sm border-t border-gray-100 pt-4">
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Es la capacidad para controlar las emociones personales y evitar las reacciones negativas ante provocaciones, oposición u hostilidad de los demás o cuando se trabaja en condiciones de estrés. Asimismo, implica la resistencia a condiciones constantes de estrés.</p>
 <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Maneja efectivamente sus emociones. Evita las manifestaciones de las emociones fuertes o el estrés sostenido; sigue funcionando bien o responde constructivamente a pesar del estrés. Puede utilizar técnicas o planificar actividades para controlar el estrés y las emociones.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Actúa con calma. Siente emociones fuertes tales como el enfado y frustración extrema, pero continúa hablando, actuando o trabajando con calma. Ignora las acciones que le producen desagrado y continúa su actividad o conversación. Puede abandonar temporalmente la reunión para controlar sus emociones y luego regresar.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Controla sus emociones. Siente el impulso de hacer algo inapropiado pero resiste la tentación. No cae en la situación de actuar irreflexivamente. O bien siente emociones fuertes y consigue controlarlas. Puede abandonar el lugar o apartarse del desencadenante de las emociones para controlarlas.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> No se involucra. Siente la presión de la situación y se mantiene al margen de la discusión.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Maneja efectivamente sus emociones. Evita las manifestaciones de las emociones fuertes o el estrés sostenido; sigue funcionando bien o responde constructivamente a pesar del estrés. Puede utilizar técnicas o planificar actividades para controlar el estrés y las emociones.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Actúa con calma. Siente emociones fuertes tales como el enfado y frustración extrema, pero continúa hablando, actuando o trabajando con calma. Ignora las acciones que le producen desagrado y continúa su actividad o conversación. Puede abandonar temporalmente la reunión para controlar sus emociones y luego regresar.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Controla sus emociones. Siente el impulso de hacer algo inapropiado pero resiste la tentación. No cae en la situación de actuar irreflexivamente. O bien siente emociones fuertes y consigue controlarlas. Puede abandonar el lugar o apartarse del desencadenante de las emociones para controlarlas.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> No se involucra. Siente la presión de la situación y se mantiene al margen de la discusión.</li>
                 </ul>
             </div>
         </div>
@@ -1055,16 +1082,16 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
   <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
             <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all" onclick="toggleGlosario('spec-4')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Búsqueda de información</span>
-                <svg id="icon-spec-4" class="w-5 h-5 text-uniacc-orange-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg id="icon-spec-4" class="w-5 h-5 text-uniacc-blue-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div id="content-spec-4" class="hidden px-6 pb-6 text-sm border-t border-gray-100 pt-4">
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Es la inquietud y la curiosidad constante por saber más sobre las cosas, los hechos o las personas. Implica buscar información más allá de las preguntas el pedido de una información concreta, la resolución de discrepancias haciendo una serie de preguntas o la búsqueda de información variada sin un objetivo concreto, una información que quizás sea útil en el futuro.</p>
 <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Pone en marcha personalmente sistemas o prácticas que permiten recoger información de manera habitual (por ejemplo, reuniones informales periódicas, lectura de ciertas publicaciones, etc.). Hace que otras personas recojan información de forma habitual y se la proporcionen.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Realiza un trabajo sistemático en un determinado lapso para obtener la máxima y mejor información posible de todas las fuentes disponibles. (Obtiene información en la web, revistas, bases de datos, estudios de mercado, financieros o de la competencia).</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Aborda personalmente el esclarecimiento de una situación o problema cuando lo normal es no hacerlo. Se encuentra con las personas más cercanas al problema y les hace preguntas. Recurre a personas que no están personalmente involucradas en la situación o problema.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Hace preguntas directas tanto a las personas que están presentes o que se supone conocen la situación como a las directamente implicadas aunque no estén presentes. Utiliza la información disponible o consulta las fuentes de información adicionales.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Pone en marcha personalmente sistemas o prácticas que permiten recoger información de manera habitual (por ejemplo, reuniones informales periódicas, lectura de ciertas publicaciones, etc.). Hace que otras personas recojan información de forma habitual y se la proporcionen.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Realiza un trabajo sistemático en un determinado lapso para obtener la máxima y mejor información posible de todas las fuentes disponibles. (Obtiene información en la web, revistas, bases de datos, estudios de mercado, financieros o de la competencia).</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Aborda personalmente el esclarecimiento de una situación o problema cuando lo normal es no hacerlo. Se encuentra con las personas más cercanas al problema y les hace preguntas. Recurre a personas que no están personalmente involucradas en la situación o problema.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Hace preguntas directas tanto a las personas que están presentes o que se supone conocen la situación como a las directamente implicadas aunque no estén presentes. Utiliza la información disponible o consulta las fuentes de información adicionales.</li>
                 </ul>
             </div>
         </div>
@@ -1072,16 +1099,16 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
  <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
             <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all" onclick="toggleGlosario('spec-5')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Capacidad de planificación y organización</span>
-                <svg id="icon-spec-5" class="w-5 h-5 text-uniacc-orange-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg id="icon-spec-5" class="w-5 h-5 text-uniacc-blue-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div id="content-spec-5"  class="hidden px-6 pb-6 text-sm border-t border-gray-100 pt-4">
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Es la capacidad de determinar eficazmente las metas y prioridades de su tarea/área/proyecto estipulando la acción, los plazos y los recursos requeridos. Incluye la instrumentación de mecanismos de seguimiento y verificación de la información.</p>
 <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Anticipa los puntos críticos de una situación o problemas con un gran número de variables, estableciendo puntos de control y mecanismos de coordinación, verificando datos y buscando información externa paraasegurar la calidad de los procesos.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Es capaz de administrar simultáneamente diversos proyectos complejos, estableciendo de manera permanente mecanismos de coordinación y control de la información de los procesos en curso.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Establece objetivos y plazos para la realización de las tareas, define prioridades, controlando la calidad del trabajo y verificando la información para asegurarse de que se han ejecutado las acciones previstas.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Organiza el trabajo y administra adecuadamente los tiempos.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Anticipa los puntos críticos de una situación o problemas con un gran número de variables, estableciendo puntos de control y mecanismos de coordinación, verificando datos y buscando información externa paraasegurar la calidad de los procesos.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Es capaz de administrar simultáneamente diversos proyectos complejos, estableciendo de manera permanente mecanismos de coordinación y control de la información de los procesos en curso.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Establece objetivos y plazos para la realización de las tareas, define prioridades, controlando la calidad del trabajo y verificando la información para asegurarse de que se han ejecutado las acciones previstas.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Organiza el trabajo y administra adecuadamente los tiempos.</li>
                 </ul>
             </div>
         </div>
@@ -1089,16 +1116,16 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
 <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
             <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all" onclick="toggleGlosario('spec-6')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Comunicación</span>
-                <svg id="icon-spec-6" class="w-5 h-5 text-uniacc-orange-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg id="icon-spec-6" class="w-5 h-5 text-uniacc-blue-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div id="content-spec-6" class="hidden px-6 pb-6 text-sm border-t border-gray-100 pt-4">
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Es la capacidad de escuchar, hacer preguntas, expresar conceptos e ideas en forma efectiva, exponer aspectos positivos. La habilidad de saber cuándo y a quién preguntar para llevar adelante un propósito. Es la escuchar al otro y comprenderlo. Comprender la dinámica de grupos y el capacidad de diseño efectivo de reuniones. Capacidad de comunicar por escrito con concisión y claridad.</p>
 <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Es reconocido por su habilidad para identificar los momentos y la forma adecuados para exponer diferentes situaciones en las políticas de la institución y llamado por otros para colaborar en estas situaciones. Utiliza herramientas y metodologías para diseñar y preparar la mejor estrategia de cada comunicación.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Es reconocido en su área de incumbencia por ser un interlocutor confiable y por su habilidad para comprender diferentes situaciones y manejar reuniones.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Se comunica formalmente con otras personas en forma oral y/o escrita. </li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> En general sus respuestas orales o escritas son bien interpretadas.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Es reconocido por su habilidad para identificar los momentos y la forma adecuados para exponer diferentes situaciones en las políticas de la institución y llamado por otros para colaborar en estas situaciones. Utiliza herramientas y metodologías para diseñar y preparar la mejor estrategia de cada comunicación.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Es reconocido en su área de incumbencia por ser un interlocutor confiable y por su habilidad para comprender diferentes situaciones y manejar reuniones.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Se comunica formalmente con otras personas en forma oral y/o escrita. </li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> En general sus respuestas orales o escritas son bien interpretadas.</li>
                 </ul>
             </div>
         </div>
@@ -1106,16 +1133,16 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
 <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
             <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all" onclick="toggleGlosario('spec-7')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Conciencia Organizacional</span>
-                <svg id="icon-spec-7" class="w-5 h-5 text-uniacc-orange-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg id="icon-spec-7" class="w-5 h-5 text-uniacc-blue-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div id="content-spec-7" class="hidden px-6 pb-6 text-sm border-t border-gray-100 pt-4">
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Es la capacidad para comprender e interpretar las relaciones de poder en la propia Universidad o en otras organizaciones, usuarios, proveedores, etc. Ello implica una capacidad de identificar tanto a las personas que toman las decisiones como a aquellas que pueden influir sobre las anteriores; así mismo, significa ser capaz de prever la forma en que los nuevos acontecimientos o situaciones afectarán a las personas.</p>
 <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Comprende las razones que motivan determinados comportamientos en los grupos u organizaciones o los problemas de fondo, oportunidades o fuerzas de poder poco obvias que los afectan.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Comprende, describe y utiliza las relaciones de poder e influencia existentes dentro de la institución con un sentido claro de cómo influir en ellas.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Comprende y utiliza las estructuras informales identificando las figuras clave. Aplica este conocimiento cuando la estructura formal no funciona como debería.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Identifica o utiliza la estructura formal o jerárquica de una institución, la cadena de mando, las normas, los procedimientos operativos establecidos, etc. Entiende las normas, los procedimientos establecidos.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Comprende las razones que motivan determinados comportamientos en los grupos u organizaciones o los problemas de fondo, oportunidades o fuerzas de poder poco obvias que los afectan.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Comprende, describe y utiliza las relaciones de poder e influencia existentes dentro de la institución con un sentido claro de cómo influir en ellas.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Comprende y utiliza las estructuras informales identificando las figuras clave. Aplica este conocimiento cuando la estructura formal no funciona como debería.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Identifica o utiliza la estructura formal o jerárquica de una institución, la cadena de mando, las normas, los procedimientos operativos establecidos, etc. Entiende las normas, los procedimientos establecidos.</li>
                 </ul>
             </div>
         </div>
@@ -1123,15 +1150,15 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
 <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
             <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all" onclick="toggleGlosario('spec-8')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Desarrollo del Equipo</span>
-                <svg id="icon-spec-8" class="w-5 h-5 text-uniacc-orange-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg id="icon-spec-8" class="w-5 h-5 text-uniacc-blue-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div id="content-spec-8" class="hidden px-6 pb-6 text-sm border-t border-gray-100 pt-4">
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Es la habilidad de desarrollar el equipo hacia adentro, el desarrollo de los propios recursos humanos. Supone facilidad para la relación interpersonal y la capacidad de comprender la repercusión que las acciones personales ejercen sobre el éxito de las acciones de los demás. Incluye la capacidad de generar adhesión, compromiso y fidelidad.</p>
 <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Desarrolla su equipo, los recursos humanos de la institución, convencido del valor estratégico que estos aportan a la gestión general y al área en particular. Comprende cabalmente el alcance de sus acciones enrelación con su equipo para una gestión exitosa de todos y cada uno de los involucrados.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Desarrolla su equipo con conocimiento de las herramientas y del valor estratégico de los recursos humanos para una mejor gestión del área.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Comprende el concepto y valor del desarrollo del propio equipo.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Desarrolla su equipo, los recursos humanos de la institución, convencido del valor estratégico que estos aportan a la gestión general y al área en particular. Comprende cabalmente el alcance de sus acciones enrelación con su equipo para una gestión exitosa de todos y cada uno de los involucrados.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Desarrolla su equipo con conocimiento de las herramientas y del valor estratégico de los recursos humanos para una mejor gestión del área.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Comprende el concepto y valor del desarrollo del propio equipo.</li>
                 </ul>
             </div>
         </div>
@@ -1139,16 +1166,16 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
 <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
             <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all" onclick="toggleGlosario('spec-9')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Flexibilidad</span>
-                <svg id="icon-spec-9" class="w-5 h-5 text-uniacc-orange-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg id="icon-spec-9" class="w-5 h-5 text-uniacc-blue-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div id="content-spec-9" class="hidden px-6 pb-6 text-sm border-t border-gray-100 pt-4">
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Es la capacidad para adaptarse y trabajar en distintas y variadas situaciones y con personas o grupos diversos. Supone entender y valorar posturas distintas o puntos de vista encontrados, adaptando su propio enfoque a medida que la situación cambiante lo requiera y promoviendo los cambios en la propia institución o las responsabilidades de su cargo.</p>
 <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Modifica sus objetivos o acciones para responder con rapidez a los cambios organizacionales o de prioridad. Acepta de buena manera los cambios en la estrategia o proyectos que establezca la institución o sus superiores.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Decide qué hacer en función de la situación. Modifica su comportamiento para adaptarse a la situación o a las personas, no de forma acomodaticia sino para beneficiar la calidad de su tarea o favorecer la calidad del proceso.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Aplica normas o procedimientos adecuados para la situación de modo de alcanzar los objetivos globales de su grupo y, por ende, de la institución.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Acepta puntos de vista de superiores y reconoce que los puntos de vista de los demás son tan válidos como los suyos. Es capaz de cambiar de opinión ante nuevos argumentos o evidencias.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Modifica sus objetivos o acciones para responder con rapidez a los cambios organizacionales o de prioridad. Acepta de buena manera los cambios en la estrategia o proyectos que establezca la institución o sus superiores.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Decide qué hacer en función de la situación. Modifica su comportamiento para adaptarse a la situación o a las personas, no de forma acomodaticia sino para beneficiar la calidad de su tarea o favorecer la calidad del proceso.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Aplica normas o procedimientos adecuados para la situación de modo de alcanzar los objetivos globales de su grupo y, por ende, de la institución.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Acepta puntos de vista de superiores y reconoce que los puntos de vista de los demás son tan válidos como los suyos. Es capaz de cambiar de opinión ante nuevos argumentos o evidencias.</li>
                 </ul>
             </div>
         </div>
@@ -1156,16 +1183,16 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
 <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
             <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all"onclick="toggleGlosario('spec-10')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Franqueza – Confiabilidad – Integridad</span>
-                <svg id="icon-spec-10" class="w-5 h-5 text-uniacc-orange-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg id="icon-spec-10" class="w-5 h-5 text-uniacc-blue-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div id="content-spec-10" class="hidden px-6 pb-6 text-sm border-t border-gray-100 pt-4">
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Establecer relaciones basadas en el respeto mutuo y la confianza. Tener coherencia entre acciones, conductas y palabras. Asumir la responsabilidad de sus propios errores. Estar comprometido con la honestidad y la confianza en cada faceta de la conducta.</p>
 <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Establece relaciones basadas en el respeto mutuo y la confianza.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Asume la responsabilidad de sus propios errores. Sus acciones y actitudes son coherentes con su discurso. Demuestra estar comprometido con la honestidad y la confianza en cada faceta de su conducta.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Con sus actitudes demuestra franqueza y establece relaciones basadas en el respeto y la confianza. Existe una correlación entre su discurso y su accionar.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Entre quienes interactúan con él, tiene imagen de confianza ya que no se contradice en su accionar.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Establece relaciones basadas en el respeto mutuo y la confianza.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Asume la responsabilidad de sus propios errores. Sus acciones y actitudes son coherentes con su discurso. Demuestra estar comprometido con la honestidad y la confianza en cada faceta de su conducta.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Con sus actitudes demuestra franqueza y establece relaciones basadas en el respeto y la confianza. Existe una correlación entre su discurso y su accionar.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Entre quienes interactúan con él, tiene imagen de confianza ya que no se contradice en su accionar.</li>
                 </ul>
             </div>
         </div>
@@ -1173,16 +1200,16 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
 <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
             <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all"onclick="toggleGlosario('spec-11')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Impacto e influencia</span>
-                <svg id="icon-spec-11" class="w-5 h-5 text-uniacc-orange-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg id="icon-spec-11" class="w-5 h-5 text-uniacc-blue-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div id="content-spec-11" class="hidden px-6 pb-6 text-sm border-t border-gray-100 pt-4">
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Implica la intención de persuadir, convencer, influir en los procesos de toma de decisiones asociados al posicionamiento de la marca institucional en el medio nacional y/o internacional.</p>
 <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Calcula el impacto de las palabras o acciones. Adapta los argumentos para atraer la atención de los demás. Piensa de antemano en el efecto que una acción o cualquier otro detalle producirá en la imagen que los demás tienen de la Universidad. Lleva a cabo acciones especialmente pensadas para producir un impacto determinado.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Utiliza influencias y cadenas de influencia indirectas. Utiliza una estrategia formada por diferentes y sucesivas acciones para influir en los demás, adaptando cada acción a los diferentes interlocutores. Se anticipa y se prepara para las reacciones de los demás.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Utiliza una única acción para persuadir. Aplica la persuasión para convencer a otros. Elabora anticipadamente varios argumentos o puntos de vista para lograr su objetivo.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Demuestra intención aunque no actúe. Intenta producir un impacto el estatus, la apariencia, etc.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Calcula el impacto de las palabras o acciones. Adapta los argumentos para atraer la atención de los demás. Piensa de antemano en el efecto que una acción o cualquier otro detalle producirá en la imagen que los demás tienen de la Universidad. Lleva a cabo acciones especialmente pensadas para producir un impacto determinado.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Utiliza influencias y cadenas de influencia indirectas. Utiliza una estrategia formada por diferentes y sucesivas acciones para influir en los demás, adaptando cada acción a los diferentes interlocutores. Se anticipa y se prepara para las reacciones de los demás.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Utiliza una única acción para persuadir. Aplica la persuasión para convencer a otros. Elabora anticipadamente varios argumentos o puntos de vista para lograr su objetivo.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Demuestra intención aunque no actúe. Intenta producir un impacto el estatus, la apariencia, etc.</li>
                 </ul>
             </div>
         </div>
@@ -1190,16 +1217,16 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
 <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
             <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all"onclick="toggleGlosario('spec-12')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Iniciativa (Proactividad)</span>
-                <svg id="icon-spec-12" class="w-5 h-5 text-uniacc-orange-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg id="icon-spec-12" class="w-5 h-5 text-uniacc-blue-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div id="content-spec-12" class="hidden px-6 pb-6 text-sm border-t border-gray-100 pt-4">
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Es la predisposición a actuar proactivamente y a pensar no sólo en lo que hay que hacer en el futuro. Implica marcar el rumbo mediante acciones concretas, no sólo de palabras. Los niveles de actuación van desde concretar decisiones tomadas en el pasado hasta la búsqueda de nuevas oportunidades o soluciones de los problemas.</p>
 <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Se anticipa a las situaciones con una visión a largo plazo; actúa para crear oportunidades o evitar problemas que no son evidentes para los demás. Elabora planes de contingencia. Es promotor de ideas innovadoras.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Se adelanta y prepara para los acontecimientos que puedan ocurrir en el corto plazo. Crea oportunidades o minimiza los problemas potenciales. Es capaz de evaluar las principales consecuencias de una decisión a largo plazo. Es ágil en la respuesta a los cambios. Aplica distintas formas de trabajo con una visión de mediano plazo.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Toma decisiones en momentos de crisis, tratando de anticiparse a las situaciones que puedan surgir. Tiene distintos enfoques para enfrentar un problema.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Aborda oportunidades o problemas del momento. Reconoce las oportunidades que se presentan, y o bien actúa para materializarlas.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Se anticipa a las situaciones con una visión a largo plazo; actúa para crear oportunidades o evitar problemas que no son evidentes para los demás. Elabora planes de contingencia. Es promotor de ideas innovadoras.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Se adelanta y prepara para los acontecimientos que puedan ocurrir en el corto plazo. Crea oportunidades o minimiza los problemas potenciales. Es capaz de evaluar las principales consecuencias de una decisión a largo plazo. Es ágil en la respuesta a los cambios. Aplica distintas formas de trabajo con una visión de mediano plazo.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Toma decisiones en momentos de crisis, tratando de anticiparse a las situaciones que puedan surgir. Tiene distintos enfoques para enfrentar un problema.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Aborda oportunidades o problemas del momento. Reconoce las oportunidades que se presentan, y o bien actúa para materializarlas.</li>
                 </ul>
             </div>
         </div>
@@ -1208,15 +1235,15 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
 <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
             <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all"onclick="toggleGlosario('spec-13')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Liderazgo</span>
-                <svg id="icon-spec-13" class="w-5 h-5 text-uniacc-orange-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg id="icon-spec-13" class="w-5 h-5 text-uniacc-blue-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div id="content-spec-13" class="hidden px-6 pb-6 text-sm border-t border-gray-100 pt-4">
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Es la habilidad necesaria para orientar la acción de los grupos humanos en una dirección determinada, inspirando valores de acción y anticipando escenarios de desarrollo de la acción de ese grupo. La habilidad para fijar objetivos, el seguimiento de dichos objetivos y la capacidad de dar retroalimentación, integrando las opiniones de los otros. Establecer claramente directivas, fijar objetivos, prioridades y comunicarlas. Tener energía y transmitirla a otros. Motivar e inspirar confianza. Tener valor para defender o encarnar creencias, ideas y asociaciones. Manejar el cambio para asegurar competitividad y efectividad a largo plazo. Plantear abiertamente los conflictos para optimizar la calidad de las decisiones y la de los colaboradores.</p>
 <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Orienta la acción de su grupo en una dirección determinada, inspirando valores de acción y anticipando escenarios. Fija objetivos, realiza su seguimiento y da retroalimentación sobre su avance integrando las opiniones de los diferentes integrantes.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> El grupo lo percibe como líder, fija objetivos y realiza un adecuado seguimiento brindando feedback a los distintos integrantes. Escucha a los demás y es escuchado.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Puede fijar objetivos que el grupo acepta realizando un adecuado seguimiento de lo encomendado.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Orienta la acción de su grupo en una dirección determinada, inspirando valores de acción y anticipando escenarios. Fija objetivos, realiza su seguimiento y da retroalimentación sobre su avance integrando las opiniones de los diferentes integrantes.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> El grupo lo percibe como líder, fija objetivos y realiza un adecuado seguimiento brindando feedback a los distintos integrantes. Escucha a los demás y es escuchado.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Puede fijar objetivos que el grupo acepta realizando un adecuado seguimiento de lo encomendado.</li>
                 </ul>
             </div>
         </div>
@@ -1224,16 +1251,16 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
 <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
             <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all"onclick="toggleGlosario('spec-14')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Negociación</span>
-                <svg id="icon-spec-14" class="w-5 h-5 text-uniacc-orange-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg id="icon-spec-14" class="w-5 h-5 text-uniacc-blue-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div id="content-spec-14" class="hidden px-6 pb-6 text-sm border-t border-gray-100 pt-4">
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Habilidad para crear un ambiente propicio para la colaboración y lograr compromisos duraderos que fortalezcan la relación. Capacidad para dirigir o controlar una discusión utilizando técnicas ganar-ganar planificando alternativas para negociar los mejores acuerdos. Se centra en el problema y no en la persona.</p>
              <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Es reconocido por su habilidad para llegar a acuerdos satisfactorios para todos y llamado por otros para colaborar en estas situaciones.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Utiliza herramientas y metodologías para diseñar y preparar la estrategia de cada negociación.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Llega a acuerdos satisfactorios en el mayor número de negociaciones a su cargo en concordancia con los objetivos de la institución.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Atiende los objetivos de la institución y logra acuerdos satisfactorios centrando la negociación en las personas que la realizan.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Es reconocido por su habilidad para llegar a acuerdos satisfactorios para todos y llamado por otros para colaborar en estas situaciones.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Utiliza herramientas y metodologías para diseñar y preparar la estrategia de cada negociación.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Llega a acuerdos satisfactorios en el mayor número de negociaciones a su cargo en concordancia con los objetivos de la institución.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Atiende los objetivos de la institución y logra acuerdos satisfactorios centrando la negociación en las personas que la realizan.</li>
                 </ul>
             </div>
         </div>
@@ -1241,16 +1268,16 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
 <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
             <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all"onclick="toggleGlosario('spec-15')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Orientación a los resultados </span>
-                <svg id="icon-spec-15" class="w-5 h-5 text-uniacc-orange-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg id="icon-spec-15" class="w-5 h-5 text-uniacc-blue-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div id="content-spec-15" class="hidden px-6 pb-6 text-sm border-t border-gray-100 pt-4">
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Es la tendencia al logro de resultados, fijando metas desafiantes por encima de los estándares, mejorando y manteniendo altos niveles de rendimiento, en el marco de las estrategias de la institución.</p>
                <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Siempre va un paso más adelante en el camino de los objetivos fijados, preocupado por los resultados globales de la institución. Se preocupa por el resultado de otras áreas. Aporta soluciones incluso frente a problemas complejos y en escenarios cambiantes, aporta soluciones de alto valor agregado para la institución.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Establece sus objetivos considerando los posibles beneficios. Compromete a su equipo en el logro de ellos. Emprende acciones de mejora, centrándose en la optimización de recursos y considerando todas las variables.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Fija objetivos para su área en concordancia con los objetivos estratégicos de la institución. Trabaja para mejorar su desempeño introduciendo los cambios necesarios en la órbita de su accionar.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Trabaja para alcanzar los estándares definidos por los niveles superiores,en los tiempos previstos y con los recursos que se le asignan.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Siempre va un paso más adelante en el camino de los objetivos fijados, preocupado por los resultados globales de la institución. Se preocupa por el resultado de otras áreas. Aporta soluciones incluso frente a problemas complejos y en escenarios cambiantes, aporta soluciones de alto valor agregado para la institución.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Establece sus objetivos considerando los posibles beneficios. Compromete a su equipo en el logro de ellos. Emprende acciones de mejora, centrándose en la optimización de recursos y considerando todas las variables.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Fija objetivos para su área en concordancia con los objetivos estratégicos de la institución. Trabaja para mejorar su desempeño introduciendo los cambios necesarios en la órbita de su accionar.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Trabaja para alcanzar los estándares definidos por los niveles superiores,en los tiempos previstos y con los recursos que se le asignan.</li>
                 </ul>
             </div>
         </div>
@@ -1258,15 +1285,15 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
 <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
             <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all"onclick="toggleGlosario('spec-16')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Pensamiento analítico</span>
-                <svg id="icon-spec-16" class="w-5 h-5 text-uniacc-orange-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg id="icon-spec-16" class="w-5 h-5 text-uniacc-blue-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div id="content-spec-16" class="hidden px-6 pb-6 text-sm border-t border-gray-100 pt-4">
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Es la capacidad para entender una situación, desagregándola en pequeñas partes o identificando sus implicaciones paso a paso. Incluye la capacidad para organizar sistemáticamente las partes de un problema o situación, realizar comparaciones entre diferentes elementos o aspectos y establecer prioridades racionales. También incluye el entendimiento de las secuencias temporales y las relaciones causa-efecto de las acciones.</p>
 <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Desmenuza un problema complejo en varias partes. Es capaz de establecer vínculos causales complejos. Reconoce varias posibles causas de un hecho, o varias consecuencias de una acción o una cadena de acontecimientos. Analiza las relaciones existentes entre las distintas partes de un problema o situación. Anticipa los obstáculos y planifica los siguientes pasos. </li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Utiliza diversas técnicas para desmenuzar los problemas complejos en las partes que lo componen e identificar varias soluciones, sopesando el valor de cada una de ellas. </li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Descompone los problemas en partes. Establece relaciones causales sencillas. Identifica los pros y los contras de las decisiones. Marca prioridades en las tareas según su importancia.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Desmenuza un problema complejo en varias partes. Es capaz de establecer vínculos causales complejos. Reconoce varias posibles causas de un hecho, o varias consecuencias de una acción o una cadena de acontecimientos. Analiza las relaciones existentes entre las distintas partes de un problema o situación. Anticipa los obstáculos y planifica los siguientes pasos. </li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Utiliza diversas técnicas para desmenuzar los problemas complejos en las partes que lo componen e identificar varias soluciones, sopesando el valor de cada una de ellas. </li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Descompone los problemas en partes. Establece relaciones causales sencillas. Identifica los pros y los contras de las decisiones. Marca prioridades en las tareas según su importancia.</li>
                 </ul>
             </div>
         </div>
@@ -1274,14 +1301,14 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
 <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
             <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all"onclick="toggleGlosario('spec-17')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Pensamiento estratégico</span>
-                <svg id="icon-spec-17" class="w-5 h-5 text-uniacc-orange-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg id="icon-spec-17" class="w-5 h-5 text-uniacc-blue-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div id="content-spec-17" class="hidden px-6 pb-6 text-sm border-t border-gray-100 pt-4">
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Es la habilidad para comprender rápidamente los cambios del entorno, las oportunidades que se presentan, las amenazas competitivas y las fortalezas y debilidades de su propia institución a la hora de identificar la mejor respuesta estratégica. Capacidad para detectar nuevas oportunidades, realizar alianzas estratégicas con usuarios, proveedores o competidores.</p>
                 <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Comprende rápidamente los cambios del entorno, las oportunidades, las amenazas competitivas, las fortalezas y debilidades de la Universidad a la hora de identificar la mejor respuesta estratégica. Detecta nuevas oportunidades de realizar alianzas estratégicas.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Puede adecuarse a los cambios del entorno detectando nuevas oportunidades.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Comprende rápidamente los cambios del entorno, las oportunidades, las amenazas competitivas, las fortalezas y debilidades de la Universidad a la hora de identificar la mejor respuesta estratégica. Detecta nuevas oportunidades de realizar alianzas estratégicas.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Puede adecuarse a los cambios del entorno detectando nuevas oportunidades.</li>
                 </ul>
             </div>
         </div>
@@ -1289,15 +1316,15 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
 <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">            
 <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all" onclick="toggleGlosario('spec-18')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Preocupación por el orden y la claridad</span>
-                <svg id="icon-spec-18" class="w-5 h-5 text-uniacc-orange-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg id="icon-spec-18" class="w-5 h-5 text-uniacc-blue-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div id="content-spec-18" class="hidden px-6 pb-6 text-sm border-t border-gray-100 pt-4">
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Es la preocupación continua por controlar el trabajo y la información. Implica también una insistencia en la claridad de las responsabilidades y funciones asignadas.</p>
                 <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Realiza el seguimiento de tareas y proyectos asignados. Se preocupa por mejorar el orden de todo lo que está bajo su responsabilidad. Presenta a sus superiores propuestas para mejorar el orden y la claridad de las tareas.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Realiza el seguimiento del trabajo de los demás vigilando su calidad para asegurarse de que se siguen los procedimientos establecidos. Lleva un registro detallado de las actividades propias y la de los demás. Se preocupa por dejar claras las normas y procedimientos empleados.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Comprueba la calidad y exactitud de las tareas a su cargo y si está a su alcance, por la de otros de su sector. Se preocupa por cumplir las normas y procedimientos.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Realiza el seguimiento de tareas y proyectos asignados. Se preocupa por mejorar el orden de todo lo que está bajo su responsabilidad. Presenta a sus superiores propuestas para mejorar el orden y la claridad de las tareas.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Realiza el seguimiento del trabajo de los demás vigilando su calidad para asegurarse de que se siguen los procedimientos establecidos. Lleva un registro detallado de las actividades propias y la de los demás. Se preocupa por dejar claras las normas y procedimientos empleados.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Comprueba la calidad y exactitud de las tareas a su cargo y si está a su alcance, por la de otros de su sector. Se preocupa por cumplir las normas y procedimientos.</li>
                 </ul>
             </div>
         </div>
@@ -1305,15 +1332,15 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
 <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm"> 
             <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all"onclick="toggleGlosario('spec-19')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Relaciones Públicas</span>
-                <svg id="icon-spec-19" class="w-5 h-5 text-uniacc-orange-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg id="icon-spec-19" class="w-5 h-5 text-uniacc-blue-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div id="content-spec-19" class="hidden px-6 pb-6 text-sm border-t border-gray-100 pt-4">
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Habilidad para establecer relaciones con redes complejas de personas cuya cooperación es necesaria para tener influencia sobre usuarios, académicos, representantes de sindicatos, grupos de interés, proveedores y la comunidad toda.</p>
                <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Establece rápida y efectivamente relaciones con redes complejas logrando la cooperación de personas necesarias para manejar su influencia.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Establece adecuadas relaciones con redes complejas logrando apoyo y cooperación de las personas necesarias.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> En ocasiones logra establecer relaciones convenientes para la institución, obteniendo la cooperación de personas necesarias.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Establece rápida y efectivamente relaciones con redes complejas logrando la cooperación de personas necesarias para manejar su influencia.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Establece adecuadas relaciones con redes complejas logrando apoyo y cooperación de las personas necesarias.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> En ocasiones logra establecer relaciones convenientes para la institución, obteniendo la cooperación de personas necesarias.</li>
                 </ul>
             </div>
         </div>
@@ -1321,14 +1348,14 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
 <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm"> 
             <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all"onclick="toggleGlosario('spec-20')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Tolerancia a la presión</span>
-                <svg id="icon-spec-20" class="w-5 h-5 text-uniacc-orange-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg id="icon-spec-20" class="w-5 h-5 text-uniacc-blue-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div id="content-spec-20" class="hidden px-6 pb-6 text-sm border-t border-gray-100 pt-4">
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Se trata de la habilidad para seguir actuando con eficacia en situaciones de presión de tiempo y de desacuerdo, oposición y diversidad. Es la capacidad para responder y trabajar con alto desempeño en situaciones de mucha exigencia.</p>
               <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span>  Alcanza los objetivos previstos en situaciones de presión de tiempo, inconvenientes, imprevistos, desacuerdos, oposición y diversidad. Su desempeño es alto en situaciones de mucha exigencia.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Habitualmente alcanza los objetivos aunque este presionado por el tiempo, y su desempeño es alto en situaciones de mucha exigencia.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span>  Alcanza los objetivos previstos en situaciones de presión de tiempo, inconvenientes, imprevistos, desacuerdos, oposición y diversidad. Su desempeño es alto en situaciones de mucha exigencia.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Habitualmente alcanza los objetivos aunque este presionado por el tiempo, y su desempeño es alto en situaciones de mucha exigencia.</li>
                 </ul>
             </div>
         </div>
@@ -1336,16 +1363,16 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
 <div class="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm"> 
             <button class="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-all"onclick="toggleGlosario('spec-21')">
                 <span class="font-bold text-uniacc-blue-700 uppercase tracking-wider text-xs md:text-sm"> Trabajo en equipo</span>
-                <svg id="icon-spec-21" class="w-5 h-5 text-uniacc-orange-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                <svg id="icon-spec-21" class="w-5 h-5 text-uniacc-blue-700 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div id="content-spec-21" class="hidden px-6 pb-6 text-sm border-t border-gray-100 pt-4">
                 <p class="mb-4 text-gray-700"><strong class="font-bold">Definición:</strong> Implica la capacidad de colaborar y cooperar con los demás, de formar parte de un grupo y de trabajar juntos en pro de un objetivo común.</p>
               <p class="text-xs font-bold text-uniacc-neutral-700 mb-2 uppercase">Conductas asociadas:</p>
                 <ul class="space-y-2">
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Fortalece el espíritu de equipo en toda la institución. Expresa satisfacción personal con los éxitos de sus pares o de otras áreas de la Universidad. Se preocupa por apoyar el desempeño de otras áreas. En beneficio de objetivos organizacionales de largo plazo, es capaz de sacrificar intereses personales o de su grupo cuando es necesario. Se considera que es un referente en el manejo de equipos de trabajo. </li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Anima y motiva a los demás. Desarrolla el espíritu de equipo. Actúa para desarrollar un ambiente de trabajo amistoso, buen clima y espíritu de cooperación. Resuelve los conflictos que se puedan producir dentro del equipo.</li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Solicita la opinión al resto del grupo. Valora sinceramente las ideas y experiencia de los demás; mantiene una actitud abierta para aprender de los otros, incluso sus pares y subordinados. Promueve la colaboración de los distintos equipos, dentro de ellos y entre ellos. Valora las contribuciones de los demás aunque tengan diferentes puntos de vista. </li>
-                    <li class="flex items-start"><span class="text-uniacc-orange-500 mr-2">•</span> Coopera. Participa de buen grado en el grupo, apoya sus decisiones. Realiza la parte de trabajo que le corresponde. Como miembro de un equipo, mantiene informados a los demás y los tiene al corriente de los temas que lo afectan. Comparte información.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Fortalece el espíritu de equipo en toda la institución. Expresa satisfacción personal con los éxitos de sus pares o de otras áreas de la Universidad. Se preocupa por apoyar el desempeño de otras áreas. En beneficio de objetivos organizacionales de largo plazo, es capaz de sacrificar intereses personales o de su grupo cuando es necesario. Se considera que es un referente en el manejo de equipos de trabajo. </li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Anima y motiva a los demás. Desarrolla el espíritu de equipo. Actúa para desarrollar un ambiente de trabajo amistoso, buen clima y espíritu de cooperación. Resuelve los conflictos que se puedan producir dentro del equipo.</li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Solicita la opinión al resto del grupo. Valora sinceramente las ideas y experiencia de los demás; mantiene una actitud abierta para aprender de los otros, incluso sus pares y subordinados. Promueve la colaboración de los distintos equipos, dentro de ellos y entre ellos. Valora las contribuciones de los demás aunque tengan diferentes puntos de vista. </li>
+                    <li class="flex items-start"><span class="text-uniacc-blue-700 mr-2">•</span> Coopera. Participa de buen grado en el grupo, apoya sus decisiones. Realiza la parte de trabajo que le corresponde. Como miembro de un equipo, mantiene informados a los demás y los tiene al corriente de los temas que lo afectan. Comparte información.</li>
                 </ul>
             </div>
         </div>
@@ -1357,10 +1384,10 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
 </section>
 
 <style>
-    /* Estilo para que la barra de desplazamiento sea delgada y naranja */
+    /* Estilo para que la barra de desplazamiento sea delgada y azul */
     .custom-scrollbar::-webkit-scrollbar { width: 5px; }
     .custom-scrollbar::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
-    .custom-scrollbar::-webkit-scrollbar-thumb { background: #ff01ff; border-radius: 10px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #0030b3; border-radius: 10px; }
 </style>
 </section>
 
@@ -1368,7 +1395,7 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
     /* Estilo para la barra de desplazamiento de las 21 competencias */
     .custom-scrollbar::-webkit-scrollbar { width: 6px; }
     .custom-scrollbar::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
-    .custom-scrollbar::-webkit-scrollbar-thumb { background: #ffa500; border-radius: 10px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #0030b3; border-radius: 10px; }
 </style>
 <style>
     .custom-scrollbar::-webkit-scrollbar {
