@@ -56,8 +56,7 @@
             }
         }
     </script>
-    <style>
-        body {
+           body {
             font-family: 'Montserrat', sans-serif;
             scroll-behavior: smooth;
             color: #3d3838;
@@ -144,17 +143,14 @@
             text-transform: uppercase;
         }
         .criterios-table td {
-    border: 1px solid white;
-    padding: 15px;
-    color: #ffffff; /* Asegurar texto blanco */
-    text-shadow: 0 0 2px rgba(0,0,0,0.3); /* Mejorar legibilidad */
-}
+            border: 1px solid white;
+            padding: 15px;
         }
-        .lvl-1 { background-color: #d62323; } /* Rojo */
-        .lvl-2 { background-color: #ff01ff; } /* Naranja/Rojo anaranjado */
-        .lvl-3 { background-color: #ffa500; } /* Amarillo */
-        .lvl-4 { background-color: #00a859; } /* Verde */
-        .lvl-5 { background-color: #2c66ff; } /* Azul */
+        .lvl-1 { background-color: #FF0000; }
+        .lvl-2 { background-color: #FF4500; }
+        .lvl-3 { background-color: #FFFF00; color: #0c0b0b; }
+        .lvl-4 { background-color: #6DB33F; }
+        .lvl-5 { background-color: #4A7EBB; }
 
         /* Estilos esquema de calibración */
         .step-arrow {
@@ -197,71 +193,39 @@
             .flow-container { flex-direction: column; }
             .arrow-separator { transform: rotate(90deg); margin: 0.5rem 0; }
         }
-        /* Estilos para accesibilidad - WCAG 2.1 Nivel AA */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
 
-.sr-only-focusable:focus {
-    position: static;
-    width: auto;
-    height: auto;
-    overflow: visible;
-    clip: auto;
-    white-space: normal;
-}
+        /* ===== ACCESIBILIDAD - SOLO AGREGADOS, SIN MODIFICAR DISEÑO ORIGINAL ===== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
 
-/* Focus visible para todos los elementos interactivos */
-*:focus-visible {
-    outline: 2px solid #ffa500;
-    outline-offset: 2px;
-    border-radius: 4px;
-}
+        .focus\:not-sr-only:focus {
+            position: static;
+            width: auto;
+            height: auto;
+            overflow: visible;
+            clip: auto;
+            white-space: normal;
+        }
 
-/* Asegurar contraste en textos */
-.text-uniacc-neutral-700 {
-    color: #495057 !important; /* Contraste mejorado */
-}
+        *:focus-visible {
+            outline: 2px solid #ffa500;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
 
-.text-uniacc-neutral-500 {
-    color: #6c757d !important;
-}
-
-/* Mejorar contraste en enlaces dentro de fondos oscuros */
-.bg-uniacc-blue-900 .text-uniacc-blue-200 {
-    color: #cfe2ff !important; /* Más claro para mejor legibilidad */
-}
-        /* Corrección de centrado */
-section > div {
-    max-width: 80rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-@media (min-width: 640px) {
-    section > div {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    section > div {
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
-}
-    </style>
+        button:focus-visible, a:focus-visible, [role="button"]:focus-visible {
+            outline: 2px solid #ffa500;
+            outline-offset: 2px;
+        }
 </head>
 <body class="bg-uniacc-blue-300">
     <!-- Skip to main content - Accesibilidad WCAG 2.1 -->
