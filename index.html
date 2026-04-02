@@ -330,45 +330,73 @@ body.high-contrast a, body.high-contrast h1, body.high-contrast h2 {
             </div>
 
             <!-- Etapas -->
-           <div id="etapas" class="mt-24">
-                <h3 class="text-2xl font-extrabold text-center text-uniacc-blue-900 mb-12 tracking-wide">Etapas del proceso</h3>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                    <div class="card-step bg-white border-2 border-uniacc-blue-100 p-10 rounded-2xl text-center group min-h-[260px] flex flex-col items-center justify-center" onclick="showStep(1)">
-                        <div class="w-14 h-14 bg-uniacc-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-6 font-extrabold text-2xl group-hover:bg-uniacc-blue-500 transition-colors">1</div>
-                        <h4 class="font-bold text-uniacc-blue-900">Análisis de las competencias por cargo</h4>
-                    </div>
-                    <div class="card-step bg-white border-2 border-uniacc-blue-100 p-10 rounded-2xl text-center group min-h-[260px] flex flex-col items-center justify-center group" onclick="showStep(2)">
-                        <div class="w-14 h-14 bg-uniacc-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-6 font-extrabold text-2xl group-hover:bg-uniacc-blue-500 transition-colors">2</div>
-                        <h4 class="font-bold text-uniacc-blue-900">Inducción evaluación de desempeño</h4>
-                    </div>
-                    <div class="card-step bg-white border-2 border-uniacc-blue-100 p-10 rounded-2xl text-center group min-h-[260px] flex flex-col items-center justify-center" onclick="showStep(3)">
-                        <div class="w-14 h-14 bg-uniacc-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-6 font-extrabold text-2xl group-hover:bg-uniacc-blue-500 transition-colors">3</div>
-                        <h4 class="font-bold text-uniacc-blue-900">Ejecución del proceso y calibración</h4>
-                    </div>
-                    <div class="card-step bg-white border-2 border-uniacc-blue-100 p-10 rounded-2xl text-center group min-h-[260px] flex flex-col items-center justify-center shadow-sm hover:shadow-lg hover:border-uniacc-blue-300 transition-all duration-300" onclick="showStep(4)">
-                        <div class="w-14 h-14 bg-uniacc-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-6 font-extrabold text-2xl group-hover:bg-uniacc-blue-500 transition-colors">4</div>
-                        <h4 class="font-bold text-uniacc-blue-900">Retroalimentación y plan de acción</h4>
-                    </div>
-                </div>
+           <div id="etapas" class="mt-24 w-full">
+    <h3 class="text-2xl font-extrabold text-center text-uniacc-blue-900 mb-12 tracking-wide">Etapas del proceso</h3>
+    
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        
+        <div class="card-step bg-white border-2 border-uniacc-blue-100 p-10 rounded-2xl text-center group min-h-[280px] flex flex-col items-center justify-start cursor-pointer transition-all duration-300 hover:shadow-lg hover:border-uniacc-blue-300" onclick="showStep(1)">
+            <div class="w-14 h-14 bg-uniacc-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-6 font-extrabold text-2xl group-hover:bg-uniacc-blue-500 transition-colors shrink-0">1</div>
+            <div class="h-16 flex items-center justify-center">
+                <h4 class="font-bold text-uniacc-blue-900 leading-tight">Análisis de las competencias por cargo</h4>
+            </div>
+        </div>
+
+        <div class="card-step bg-white border-2 border-uniacc-blue-100 p-10 rounded-2xl text-center group min-h-[280px] flex flex-col items-center justify-start cursor-pointer transition-all duration-300 hover:shadow-lg hover:border-uniacc-blue-300" onclick="showStep(2)">
+            <div class="w-14 h-14 bg-uniacc-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-6 font-extrabold text-2xl group-hover:bg-uniacc-blue-500 transition-colors shrink-0">2</div>
+            <div class="h-16 flex items-center justify-center">
+                <h4 class="font-bold text-uniacc-blue-900 leading-tight">Inducción evaluación de desempeño</h4>
+            </div>
+        </div>
+
+        <div class="card-step bg-white border-2 border-uniacc-blue-100 p-10 rounded-2xl text-center group min-h-[280px] flex flex-col items-center justify-start cursor-pointer transition-all duration-300 hover:shadow-lg hover:border-uniacc-blue-300" onclick="showStep(3)">
+            <div class="w-14 h-14 bg-uniacc-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-6 font-extrabold text-2xl group-hover:bg-uniacc-blue-500 transition-colors shrink-0">3</div>
+            <div class="h-16 flex items-center justify-center">
+                <h4 class="font-bold text-uniacc-blue-900 leading-tight">Ejecución del proceso y calibración</h4>
+            </div>
+        </div>
+
+        <div class="card-step bg-white border-2 border-uniacc-blue-100 p-10 rounded-2xl text-center group min-h-[280px] flex flex-col items-center justify-start cursor-pointer transition-all duration-300 hover:shadow-lg hover:border-uniacc-blue-300" onclick="showStep(4)">
+            <div class="w-14 h-14 bg-uniacc-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-6 font-extrabold text-2xl group-hover:bg-uniacc-blue-500 transition-colors shrink-0">4</div>
+            <div class="h-16 flex items-center justify-center">
+                <h4 class="font-bold text-uniacc-blue-900 leading-tight">Retroalimentación y plan de acción</h4>
+            </div>
+        </div>
+        
+        
 
                 <!-- Panel de Detalles -->
-                <div id="step-details" class="mt-12 bg-uniacc-blue-900 border border-uniacc-blue-800 p-10 rounded-3xl min-h-[180px] shadow-xl text-white">
-                    <div id="step-placeholder" class="text-center text-uniacc-blue-200 py-10 font-medium">
-                        Haz clic en una de las etapas para conocer los detalles del proceso.
-                    </div>
-                    
+               <div id="step-details" class="col-span-1 md:col-span-4 mt-6 bg-uniacc-blue-900 border border-uniacc-blue-800 p-10 rounded-3xl min-h-[180px] shadow-xl text-white w-full">
+    
+    		<div id="step-content">
+       		 <div id="step-placeholder" class="text-center text-uniacc-blue-200 py-10 font-medium">
+           	 Haz clic en una de las etapas para conocer los detalles del proceso.
+        		</div>
+    		</div>
+	
                     <div id="step-1" class="hidden-content">
-                        <h4 class="text-2xl font-extrabold text-uniacc-blue-300 mb-4 tracking-tighter">Etapa 1: Análisis de las competencias por cargo</h4>
-                        <p class="text-lg opacity-90 leading-relaxed mb-8">Revisa las competencias transversales y específicas que guían este proceso institucional.</p>
-                        
-                        <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                            <button onclick="toggleInfo('info-competencias')" class="inline-flex items-center justify-center px-6 py-3 bg-uniacc-magenta-500 hover:bg-uniacc-magenta-600 text-white font-bold rounded-xl transition-all transform hover:scale-105 shadow-lg text-sm tracking-wider">
-                                Competencias transversales
-                            </button>
-                            <button onclick="toggleInfo('info-especificas')" class="inline-flex items-center justify-center px-6 py-3 bg-uniacc-orange-500 hover:bg-uniacc-orange-600 text-white font-bold rounded-xl transition-all transform hover:scale-105 shadow-lg text-sm tracking-wider">
-                                Competencias específicas
-                            </button>
-                        </div>
+    <h4 class="text-2xl font-extrabold text-uniacc-blue-300 mb-2 tracking-tight">Etapa 1: Análisis de las competencias por cargo</h4>
+    
+    <div class="h-[2px] w-20 mb-6" style="background-color: #0030b3;"></div>
+
+    <p class="text-lg opacity-90 leading-relaxed mb-8">Revisa las competencias transversales y específicas que guían este proceso institucional.</p>
+    
+    <div class="flex flex-col sm:flex-row gap-4 mb-10">
+        <button onclick="toggleInfo('info-competencias')" class="inline-flex items-center justify-center px-6 py-3 bg-uniacc-magenta-500 hover:bg-uniacc-magenta-600 text-white font-bold rounded-xl transition-all transform hover:scale-105 shadow-lg text-sm tracking-wider">
+            Competencias transversales
+        </button>
+        <button onclick="toggleInfo('info-especificas')" class="inline-flex items-center justify-center px-6 py-3 bg-uniacc-orange-500 hover:bg-uniacc-orange-600 text-white font-bold rounded-xl transition-all transform hover:scale-105 shadow-lg text-sm tracking-wider">
+            Competencias específicas
+        </button>
+    </div>
+
+    <div class="pt-6 border-t border-uniacc-blue-800">
+        <p class="text-uniacc-blue-100 mb-4">Para profundizar sobre las competencias puedes ir al glosario.</p>
+        <a href="#glosario" class="inline-flex items-center justify-center px-8 py-3 bg-uniacc-blue-700 hover:bg-uniacc-blue-600 text-white font-bold rounded-xl transition-all transform hover:scale-105 shadow-lg text-sm tracking-wider border border-uniacc-blue-500">
+            Ir al glosario
+        </a>
+    </div>
+</div>
 
                         <!-- Info Competencias Transversales -->
                         <div id="info-competencias" class="hidden-content fade-in bg-white/10 p-1 rounded-2xl overflow-hidden border border-white/20 mb-8">
