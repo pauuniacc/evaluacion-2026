@@ -144,8 +144,11 @@
             text-transform: uppercase;
         }
         .criterios-table td {
-            border: 1px solid white;
-            padding: 15px;
+    border: 1px solid white;
+    padding: 15px;
+    color: #ffffff; /* Asegurar texto blanco */
+    text-shadow: 0 0 2px rgba(0,0,0,0.3); /* Mejorar legibilidad */
+}
         }
         .lvl-1 { background-color: #d62323; } /* Rojo */
         .lvl-2 { background-color: #ff01ff; } /* Naranja/Rojo anaranjado */
@@ -194,6 +197,48 @@
             .flow-container { flex-direction: column; }
             .arrow-separator { transform: rotate(90deg); margin: 0.5rem 0; }
         }
+        /* Estilos para accesibilidad - WCAG 2.1 Nivel AA */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.sr-only-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+/* Focus visible para todos los elementos interactivos */
+*:focus-visible {
+    outline: 2px solid #ffa500;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Asegurar contraste en textos */
+.text-uniacc-neutral-700 {
+    color: #495057 !important; /* Contraste mejorado */
+}
+
+.text-uniacc-neutral-500 {
+    color: #6c757d !important;
+}
+
+/* Mejorar contraste en enlaces dentro de fondos oscuros */
+.bg-uniacc-blue-900 .text-uniacc-blue-200 {
+    color: #cfe2ff !important; /* Más claro para mejor legibilidad */
+}
     </style>
 </head>
 <body class="bg-uniacc-blue-300">
@@ -1337,10 +1382,10 @@
                     </div>
 <img
   src="UNIACC_LOGO4.png" 
-  alt="Logotipo Universidad UNIACC"
+  alt="Logotipo Universidad UNIACC - Universidad de las Artes, Ciencias y Comunicaciones"
   style="max-height: 60px; float: right;"
-
 >
+
     </footer>
 
     <script>
@@ -1407,41 +1452,31 @@
         }
 // ... otras funciones existentes (toggleFaq, etc) ...
 
-        function toggleGlosario(id) {
-            const content = document.getElementById('content-' + id);
-            const icon = document.getElementById('icon-' + id);
-            
-            if (content && icon) {
-                const isHidden = content.classList.contains('hidden');
-                
-                // Cierra los demás para que no se vea desordenado
-                document.querySelectorAll('[id^="content-"]').forEach(el => el.classList.add('hidden'));
-                document.querySelectorAll('[id^="icon-"]').forEach(el => el.classList.remove('rotate-180'));
-
-                if (isHidden) {
-                    content.classList.remove('hidden');
-                    icon.classList.add('rotate-180');
-                }
-            }
-function toggleGlosario(id) {
+  function toggleGlosario(id) {
     const content = document.getElementById('content-' + id);
     const icon = document.getElementById('icon-' + id);
+    const button = content ? content.previousElementSibling : null;
     
     if (content && icon) {
         const isHidden = content.classList.contains('hidden');
         
-        // Esto cierra CUALQUIER otra competencia abierta (Transversal o Específica)
-        document.querySelectorAll('[id^="content-"]').forEach(el => el.classList.add('hidden'));
+        // Cierra los demás
+        document.querySelectorAll('[id^="content-"]').forEach(el => {
+            el.classList.add('hidden');
+            const btn = el.previousElementSibling;
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
         document.querySelectorAll('[id^="icon-"]').forEach(el => el.classList.remove('rotate-180'));
 
-        // Si la que clicamos estaba cerrada, ahora se abre
         if (isHidden) {
             content.classList.remove('hidden');
             icon.classList.add('rotate-180');
+            if (button) button.setAttribute('aria-expanded', 'true');
+        } else {
+            if (button) button.setAttribute('aria-expanded', 'false');
         }
     }
 }
-
         }
     </script>
     </script>
